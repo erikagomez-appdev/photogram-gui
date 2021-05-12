@@ -38,7 +38,8 @@ class PhotosController < ApplicationController
     
     new_photo.save
 
-    redirect_to("/photos/" + new_photo.id.to_s)
+    next_url = "/photos/" + new_photo.id.to_s
+    redirect_to(next_url)
 
     #render({:template => "photos_templates/create.html.erb"})
   end
@@ -56,8 +57,9 @@ class PhotosController < ApplicationController
     the_photo.caption = input_caption
 
     the_photo.save
-    
-    redirect_to("/photos/"+ the_photo.id.to_s)
+
+    next_url = "/photos/"+ the_photo.id.to_s    
+    redirect_to(next_url)
 
     #render({ :template => "photos_templates/update.html.erb" })
   end
